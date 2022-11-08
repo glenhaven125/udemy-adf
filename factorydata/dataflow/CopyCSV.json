@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "CopyCSV",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -9,16 +9,22 @@
 						"referenceName": "DelimitedText_Customer_CSV",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "SourceCSVFile"
 				}
 			],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          id as string,",
+				"          Name as string,",
+				"          age as string,",
+				"          Address_id as string,",
+				"          Sales_id as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     limit: 100,",
-				"     ignoreNoFilesFound: false) ~> source1"
+				"     ignoreNoFilesFound: false) ~> SourceCSVFile"
 			]
 		}
 	}
