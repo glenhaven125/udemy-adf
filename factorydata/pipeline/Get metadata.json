@@ -22,7 +22,8 @@
 					"fieldList": [
 						"exists",
 						"lastModified",
-						"size"
+						"size",
+						"structure"
 					],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
