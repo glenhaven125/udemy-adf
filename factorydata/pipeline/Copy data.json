@@ -57,7 +57,14 @@
 			{
 				"name": "Copy data from Blob to Date Lake",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Copy data Azure SQL DB to Blob",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
