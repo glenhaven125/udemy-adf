@@ -12,7 +12,15 @@
 					"name": "SourceCSVFile"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Parquet1",
+						"type": "DatasetReference"
+					},
+					"name": "SinkParquet"
+				}
+			],
 			"transformations": [],
 			"scriptLines": [
 				"source(output(",
@@ -24,7 +32,15 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> SourceCSVFile"
+				"     ignoreNoFilesFound: false) ~> SourceCSVFile",
+				"SourceCSVFile sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'parquet',",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> SinkParquet"
 			]
 		}
 	}
