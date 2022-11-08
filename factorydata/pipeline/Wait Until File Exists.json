@@ -58,7 +58,19 @@
 								"expression": {
 									"value": "@activity('Get Metadata1').output.exists",
 									"type": "Expression"
-								}
+								},
+								"ifTrueActivities": [
+									{
+										"name": "Set variable file_exists",
+										"type": "SetVariable",
+										"dependsOn": [],
+										"userProperties": [],
+										"typeProperties": {
+											"variableName": "File_Exists",
+											"value": true
+										}
+									}
+								]
 							}
 						}
 					],
