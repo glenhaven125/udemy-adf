@@ -3,13 +3,13 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Until True",
+				"name": "Until Time",
 				"type": "Until",
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@bool('true')",
+						"value": "@greater(utcnow(),'2022-11-08T17:48:32.5842031Z')",
 						"type": "Expression"
 					},
 					"activities": [
@@ -19,7 +19,7 @@
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
-								"waitTimeInSeconds": 1
+								"waitTimeInSeconds": 20
 							}
 						}
 					],
