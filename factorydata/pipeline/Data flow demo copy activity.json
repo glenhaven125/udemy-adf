@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "Data flow demo copy activity",
 	"properties": {
 		"activities": [
 			{
