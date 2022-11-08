@@ -24,7 +24,8 @@
 					"dataset": {
 						"referenceName": "AzureSqlTablecustomer",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			}
 		],
